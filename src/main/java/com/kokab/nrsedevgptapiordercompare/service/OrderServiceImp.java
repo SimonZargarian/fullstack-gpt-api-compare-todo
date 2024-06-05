@@ -2,7 +2,7 @@ package com.kokab.nrsedevgptapiordercompare.service;
 
 import com.kokab.nrsedevgptapiordercompare.model.Item;
 import com.kokab.nrsedevgptapiordercompare.model.OrderDetails;
-import com.kokab.nrsedevgptapiordercompare.open_ai.OpenAIService;
+import com.kokab.nrsedevgptapiordercompare.open_ai.OpenAIServiceImpl;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
 import kong.unirest.json.JSONObject;
@@ -13,9 +13,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class OrderServiceImp {
+public class OrderServiceImp implements OrderService {
 
-    private static final Logger logger = LoggerFactory.getLogger(OpenAIService.class);
+    private static final Logger logger = LoggerFactory.getLogger(OpenAIServiceImpl.class);
 
     public String orderDetailsToJsonFormat(OrderDetails orderDetails) {
         StringBuilder detailsBuilder = new StringBuilder();

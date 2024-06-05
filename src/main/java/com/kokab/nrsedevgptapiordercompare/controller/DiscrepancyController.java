@@ -1,7 +1,7 @@
 package com.kokab.nrsedevgptapiordercompare.controller;
 
 import com.kokab.nrsedevgptapiordercompare.model.entity.Discrepancy;
-import com.kokab.nrsedevgptapiordercompare.service.DiscrepancyService;
+import com.kokab.nrsedevgptapiordercompare.service.DiscrepancyServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +16,12 @@ import java.util.List;
 public class DiscrepancyController {
 
     @Autowired
-    DiscrepancyService discrepancyService;
+    DiscrepancyServiceImpl discrepancyServiceImpl;
 
     @GetMapping(value = "/discrepancies")
     public List<Discrepancy>  getAllDiscrepancies(){
 
-        return discrepancyService.getAllMembersNearYou();
+        return discrepancyServiceImpl.getAllMembersNearYou();
     }
 
 }
